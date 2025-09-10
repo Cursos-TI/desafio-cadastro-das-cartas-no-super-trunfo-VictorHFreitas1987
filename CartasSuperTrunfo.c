@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>  // Função inserida para correção do problema com o espaço no nome das cidades.
     
-#include <string.h>  // Função inserida para correção do problema com o espaço no nome das cidades.
+
     
 int main() {
     /* DECLARAÇÃO DE VARIÁVEIS */   
