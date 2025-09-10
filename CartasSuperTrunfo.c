@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>  // Função inserida para correção do problema com o espaço no nome das cidades.
     
+#include <string.h>  // Função inserida para correção do problema com o espaço no nome das cidades.
+    
 int main() {
     /* DECLARAÇÃO DE VARIÁVEIS */   
     char Estado1, Estado2;
@@ -8,6 +10,7 @@ int main() {
     char NomeCidade1[20], NomeCidade2[20];
     int Populacao1, Populacao2, PontosTuristicos1, PontosTuristicos2;
     float Pib1, Pib2, Area1, Area2;
+    float RendaPerCapita1,RendaPerCapita2,DensidadeDemografica1,DensidadeDemografica2;
     /* FIM DECLARAÇÃO DE VARIÁVEIS */
 
     /* MENSAGEM INICIAL */
@@ -40,6 +43,11 @@ int main() {
     printf("Digite a quantidade de pontos turísticos:\n");
     scanf("%d", &PontosTuristicos1);
 
+    /*Calcula Pib per capita e densidade demográfica da carta 1 */
+
+    RendaPerCapita1 = Pib1*(1e9)/Populacao1;
+    DensidadeDemografica1 = Populacao1/(Area1);
+
     printf("\nCarta 1 cadastrada com sucesso!\n\nVamos Cadastrasr uma nova carta?\n\n");
 
     /* CADASTRO CARTA 2 */
@@ -68,6 +76,13 @@ int main() {
     printf("Digite a quantidade de pontos turísticos:\n");
     scanf("%d", &PontosTuristicos2);
 
+    
+    /*Calcula Pib per capita e densidade demográfica da carta 2 */
+
+    RendaPerCapita2 = Pib2*(1e9)/Populacao2;
+    DensidadeDemografica2 = Populacao2/(Area2);
+
+
     /* APRESENTAÇÃO DAS CARTAS */
     printf("\n=== Cartas Cadastradas ===\n\n");
 
@@ -77,8 +92,12 @@ int main() {
     printf("Nome da Cidade: %s\n", NomeCidade1);
     printf("População: %d habitantes\n", Populacao1);
     printf("Área: %.2f km²\n", Area1);
-    printf("PIB: %.2f bilhões de R$\n", Pib1);
+    printf("PIB: %.2f bilhões de Reais\n", Pib1);
     printf("Pontos Turísticos: %d\n", PontosTuristicos1);
+    printf("Área: %.2f km²\n", Area1);
+    printf("Densidade Populacional: %.2f hab/km²\n", DensidadeDemografica1);
+    printf("Pib per Capita: %.2f Reais\n", RendaPerCapita1);
+
 
     printf("\nCarta 2:\n");
     printf("Estado: %c\n", Estado2);
@@ -86,20 +105,22 @@ int main() {
     printf("Nome da Cidade: %s\n", NomeCidade2);
     printf("População: %d habitantes\n", Populacao2);
     printf("Área: %.2f km²\n", Area2);
-    printf("PIB: %.2f bilhões de R$\n", Pib2);
+    printf("PIB: %.2f bilhões de Reais\n", Pib2);
     printf("Pontos Turísticos: %d\n", PontosTuristicos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", DensidadeDemografica2);
+    printf("Pib per Capita: %.2f Reais\n", RendaPerCapita2);
+
+
+    
+
+
+
+
+
+
 
     return 0;
 }
 
 
-// Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
